@@ -3,80 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nico Nuñez | Web Portfolio</title>
+    <title>Nico Nuñez | Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header class="header">
-        <a href="#" class="logo"><span>Nico Nuñez</span></a>
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#project">Projects</a></li>
-            <li><a href="#contacts">Contacts</a></li>
+
+    <nav class="navbar">
+        <div class="logo">NICO NUÑEZ</div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="about.html">Home</a></li>
+            <li><a href="experience.html">Experience</a></li>
+            <li><a href="certs.html">Certifications</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
-        <i class="fa-solid fa-bars" id="menu-icon"></i>
-        <button class="visit-btn">Visit Github</button>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-container">
+            <div class="hero-image">
+                <img src="images/nico-formal-nobg.png" alt="Nico Nuñez">
+            </div>
+            <div class="hero-text">
+                <div class="title-group">
+                    <h1>Hi! I am</h1>
+                    <div class="line"></div>
+                </div>
+                <h2 class="name">Nico Nuñez</h2>
+                <p class="description">
+                  I’m passionate about growing and honing my skills in the IT field, especially in databases and programming. I continuously improve through hands-on projects and regular practice. My goal is to become a skilled professional and build practical, user-friendly systems that solve real-world problems.
+
+                </p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/nico.31890/"><i class="fab fa-facebook"></i></a>
+                    <a href="https://github.com/niconunez"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
     </header>
 
-    <section id="about" class="about">
-        <div class="about-container">
-            <img src="nico-formal.jpg" alt="Nico Nuñez">
-            
-            <div class="info-box">
-                <div class="text">
-                    <h3>Hi! I'm</h3>
-                    <h1>Nico Nuñez</h1>
-                    <span>Graphics Designer | IT</span>
-                </div>
-
-                <div class="btn-group">
-                    <div class="btn">Download Resume</div>
-                    <div class="btn">Contact</div>
-                </div>
-
-                <div class="socials">
-                    <i class="fa-brands fa-github"></i>
-                    <i class="fa-brands fa-linkedin"></i>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="experience" class="experience">
-
-        <h2 class="section-title">Experience</h2>
-        <div class="experience-info">
-            <div class="grid-card">
-                <i class="fa-solid fa-code"></i>
-                <span>Frontend Development</span>
-                <h3>2 years</h3>
-                <p>lorem</p>
-            </div>
-
-             <div class="grid-card">
-                <i class="fa-solid fa-file-code"></i>
-                <span>Frontend Development</span>
-                <h3>2 years</h3>
-                <p>lorem</p>
-            </div>
-
-             <div class="grid-card">
-                <i class="fa-solid fa-laptop"></i>
-                <span>Graphic Design</span>
-                <h3>2 years</h3>
-                <p>lorem</p>
-            </div>
-
-             <div class="grid-card">
-                <i class="fa-solid fa-list"></i>
-                <span>System Design</span>
-                <h3>2 years</h3>
-                <p>lorem</p>
-            </div>
-
-            <img src="nico-formal.jpg" alt="">
-        </div>
-    </section>
+    <script src="script.js"></script>
 </body>
 </html>
