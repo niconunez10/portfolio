@@ -308,3 +308,58 @@ body {
         order: 1;
     }
 }
+/* --- Updated Navbar Hover Effects --- */
+
+.nav-links a {
+    position: relative; /* Necessary for the custom underline effect */
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+/* 1. Change text color and slight glow on hover */
+.nav-links a:hover {
+    color: #1CB5E0; /* Matches your theme's light blue */
+    text-shadow: 0 0 10px rgba(28, 181, 224, 0.5);
+}
+
+/* 2. Modern Animated Underline */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 5px;
+    right: 0;
+    background: #1CB5E0;
+    transition: width 0.3s ease;
+    -webkit-transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+    left: 0;
+    background: #1CB5E0;
+}
+
+/* 3. Button effect for the Logo */
+.logo {
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05); /* Slight pop-out effect */
+    color: #1CB5E0;
+}
+
+/* 4. Active Link State (so people know where they are) */
+.active-link {
+    color: #1CB5E0 !important;
+}
+
+.active-link::after {
+    width: 100% !important; /* Keep the line visible for the active page */
+}
