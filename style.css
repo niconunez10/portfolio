@@ -440,7 +440,7 @@ body {
 .badge-gallery {
     display: flex;
     justify-content: center;
-    align-items: flex-end; /* Aligns them along the bottom for better visual flow */
+    align-items: center; /* Center badge items for even alignment */
     gap: 50px;
     margin-bottom: 80px;
     flex-wrap: wrap;
@@ -450,17 +450,18 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 120px; /* Fixed width container for consistency */
+    justify-content: center;
+    width: 120px;
     transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .badge-item img {
-    height: 70px; /* Forces all badges to the exact same height */
-    width: auto;   /* Maintains aspect ratio so they don't stretch */
-    max-width: 100%; 
-    object-fit: contain; /* Ensures the image fits within the 70px height without clipping */
+    height: 70px;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
     margin-bottom: 15px;
-    filter: drop-shadow(0 0 8px rgba(28, 181, 224, 0.2));
+    filter: drop-shadow(0 0 8px rgba(28, 181, 224, 0.3));
 }
 
 .badge-item span {
@@ -472,7 +473,6 @@ body {
     opacity: 0.8;
 }
 
-/* Interaction */
 .badge-item:hover {
     transform: translateY(-10px);
 }
@@ -494,18 +494,202 @@ body {
     }
 }
 
-/* --- Certifications Container --- */
-.certs-container {
-    padding: 60px 8%;
+/* --- Contact Page Main Container --- */
+.contact-container {
+    padding: 80px 8%;
     max-width: 1200px;
     margin: 0 auto;
+    min-height: 100vh;
+}
+
+/* --- Resume Section (View/Download) --- */
+.resume-section {
+    max-width: 900px;
+    margin: 0 auto 60px auto;
+}
+
+.resume-content {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 30px 40px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    backdrop-filter: blur(10px);
+    transition: border-color 0.3s ease;
+}
+
+.resume-content:hover {
+    border-color: #1CB5E0;
+}
+
+.resume-content i {
+    font-size: 3.5rem;
+    color: #1CB5E0;
+}
+
+.resume-text {
+    flex-grow: 1;
+}
+
+.resume-text h3 {
+    font-size: 1.6rem;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.resume-text p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.95rem;
+}
+
+/* Resume Buttons */
+.resume-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.main-btn {
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    background: #1CB5E0;
+    color: white;
+    border: 2px solid #1CB5E0;
+    cursor: pointer;
+}
+
+.main-btn.outline {
+    background: transparent;
+    color: #1CB5E0;
+}
+
+.main-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(28, 181, 224, 0.3);
+}
+
+.main-btn.outline:hover {
+    background: rgba(28, 181, 224, 0.1);
+}
+
+/* --- Social Contact Grid --- */
+.contact-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.contact-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px 20px;
+    width: 320px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    backdrop-filter: blur(10px);
+}
+
+.contact-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: #1CB5E0;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.contact-card i {
+    font-size: 3rem;
+    color: #1CB5E0;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.contact-card:hover i {
+    transform: scale(1.1);
+}
+
+.contact-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.contact-card p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+    margin-bottom: 25px;
+}
+
+/* Card Button Decoration */
+.contact-btn {
+    display: inline-block;
+    padding: 10px 24px;
+    border: 1px solid #1CB5E0;
+    border-radius: 30px;
+    color: #1CB5E0;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.contact-card:hover .contact-btn {
+    background: #1CB5E0;
+    color: white;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 992px) {
+    .resume-content {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+    }
+    
+    .resume-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .main-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        padding: 60px 5%;
+    }
+    
+    .contact-card {
+        width: 100%;
+    }
+}
+
+/* --- Certifications Page Container --- */
+.certs-container {
+    padding: 80px 8%;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 100vh;
 }
 
 /* --- Standardized Badge Gallery --- */
 .badge-gallery {
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: flex-end; /* Aligns badges along the bottom for visual balance */
     gap: 50px;
     margin-bottom: 80px;
     flex-wrap: wrap;
@@ -515,16 +699,16 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 120px;
+    width: 120px; /* Standardized container width */
     transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .badge-item img {
-    height: 70px; /* Fixed height for all badges */
+    height: 70px; /* Forces all badges to the exact same height */
     width: auto;
     object-fit: contain;
     margin-bottom: 15px;
-    filter: drop-shadow(0 0 8px rgba(28, 181, 224, 0.3));
+    filter: drop-shadow(0 0 8px rgba(28, 181, 224, 0.2));
 }
 
 .badge-item span {
@@ -539,11 +723,13 @@ body {
     transform: translateY(-10px);
 }
 
-/* --- Detailed Certificate Cards --- */
+/* --- Horizontal Certificate Grid --- */
 .certs-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    justify-content: center;
+    align-items: stretch; /* Forces all cards in a row to be equal height */
     gap: 30px;
+    flex-wrap: wrap;
 }
 
 .cert-card {
@@ -551,50 +737,75 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 15px;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    width: 320px; /* Standard card width */
     transition: 0.3s ease;
     backdrop-filter: blur(5px);
 }
 
 .cert-card:hover {
-    transform: scale(1.02);
+    transform: translateY(-5px);
     border-color: #1CB5E0;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
 }
 
+/* --- Image Container Alignment Fix --- */
 .cert-img-container {
-    height: 220px;
-    background: rgba(0, 0, 0, 0.2);
+    height: 250px; /* Fixed height for consistent horizontal alignment */
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.15);
 }
 
 .cert-img-container img {
+    max-height: 160px; /* Limits size so different shapes look uniform */
     max-width: 100%;
-    max-height: 100%;
     object-fit: contain;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
 }
 
+/* --- Text Content Alignment --- */
 .cert-info {
-    padding: 20px;
+    padding: 25px;
     text-align: center;
+    flex-grow: 1; /* Pushes content to fill card height */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .cert-info h3 {
     font-size: 1.2rem;
     color: white;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
+    min-height: 3em; /* Reserves space so text starts at the same line */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .cert-info p {
     color: rgba(255, 255, 255, 0.6);
     font-size: 0.9rem;
+    line-height: 1.4;
 }
 
-/* Mobile Responsive */
+/* --- Responsive Adjustments --- */
 @media (max-width: 768px) {
-    .badge-gallery { gap: 30px; }
-    .badge-item img { height: 55px; }
-    .certs-grid { grid-template-columns: 1fr; }
+    .badge-gallery {
+        gap: 25px;
+    }
+    
+    .badge-item img {
+        height: 55px;
+    }
+
+    .cert-card {
+        width: 100%; /* Stacks cards on mobile */
+    }
 }
