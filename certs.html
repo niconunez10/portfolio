@@ -4,24 +4,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Certifications | Nico Nuñez</title>
-    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-      <nav class="navbar">
+
+    <nav class="navbar">
         <div class="logo">NICO NUÑEZ</div>
-        <ul class="nav-links">
+        <ul class="nav-links" id="navLinks">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="techstack.html">Tech Stack</a></li>
-            <li><a href="certs.html" >Certifications</a></li>
+            <li><a href="certs.html" class="active-link">Certifications</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
-
-        <div class="navcertimage">
-            <img src="images/powerpointbadge.png" alt="PowerPoint Certification">
-            <img src="images/microsoftbadge.png" alt="Microsoft Certification Badge">
-            <img src="images/pythoncert.png" alt="Python Certification">
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
         </div>
     </nav>
+
+    <main class="certs-container">
+        <div class="section-title">
+            <h1>Certifications</h1>
+            <p>Professional milestones and verified technical achievements.</p>
+            <div class="underline"></div>
+        </div>
+            <br>
+        <!-- Consistent Badge Gallery -->
+        <div class="badge-gallery">
+            <div class="badge-item">
+                <img src="images/powerpointbadge.png" alt="PowerPoint Certification">
+                <span>PowerPoint</span>
+            </div>
+            <div class="badge-item">
+                <img src="images/microsoftbadge.png" alt="Microsoft Certification Badge">
+                <span>Microsoft</span>
+            </div>
+            <div class="badge-item">
+                <img src="images/pythoncert.png" alt="Python Certification">
+                <span>Python</span>
+            </div>
+        </div>
+        <br\>
+        <!-- Certificate Grid -->
+        <div class="certs-grid">
+            <div class="cert-card">
+                <div class="cert-img-container">
+                    <img src="images/pythoncert.png" alt="Python Certificate">
+                </div>
+                <div class="cert-info">
+                    <h3>Python Programming</h3>
+                    <p>Verified Technical Achievement</p>
+                </div>
+            </div>
+
+            <div class="cert-card">
+                <div class="cert-img-container">
+                    <img src="images/microsoftbadge.png" alt="Microsoft Certificate">
+                </div>
+                <div class="cert-info">
+                    <h3>Microsoft Specialist</h3>
+                    <p>Official Certification</p>
+                </div>
+            </div>
+
+            <div class="cert-card">
+                <div class="cert-img-container">
+                    <img src="images/powerpointbadge.png" alt="PowerPoint Certificate">
+                </div>
+                <div class="cert-info">
+                    <h3>Advanced Presentation</h3>
+                    <p>Office Suite Mastery</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
