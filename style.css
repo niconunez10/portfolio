@@ -795,6 +795,79 @@ body {
     line-height: 1.4;
 }
 
+/* --- Image Expansion Modal --- */
+.image-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.image-modal img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    animation: zoomIn 0.3s ease-in-out;
+    border-radius: 10px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes zoomIn {
+    from {
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+.close-modal {
+    position: absolute;
+    top: 30px;
+    right: 45px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+    transition: 0.3s ease;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+    color: #1CB5E0;
+    text-shadow: 0 0 10px rgba(28, 181, 224, 0.6);
+}
+
+.expandable-image {
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.expandable-image:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
 /* --- Responsive Adjustments --- */
 @media (max-width: 768px) {
     .badge-gallery {
@@ -807,5 +880,16 @@ body {
 
     .cert-card {
         width: 100%; /* Stacks cards on mobile */
+    }
+
+    .image-modal img {
+        max-width: 95%;
+        max-height: 85%;
+    }
+
+    .close-modal {
+        top: 15px;
+        right: 20px;
+        font-size: 35px;
     }
 }
