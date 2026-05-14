@@ -167,6 +167,7 @@ body {
 .menu-toggle {
     display: none;
     cursor: pointer;
+    flex-direction: column;
 }
 
 .bar {
@@ -175,6 +176,7 @@ body {
     height: 3px;
     margin: 5px auto;
     background-color: white;
+    transition: all 0.3s ease;
 }
 
 /* Responsive Tablet/Mobile */
@@ -192,19 +194,77 @@ body {
 }
 
 @media (max-width: 768px) {
-    .menu-toggle { display: block; }
+    .menu-toggle { 
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .menu-toggle.active .bar:nth-child(1) {
+        transform: rotate(45deg) translate(10px, 10px);
+    }
+
+    .menu-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active .bar:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+    }
+
     .nav-links {
-        display: none; /* Controlled by JS */
-        position: absolute;
+        display: none;
+        position: fixed;
         top: 80px;
         left: 0;
         width: 100%;
-        background: #000046;
+        height: calc(100vh - 80px);
+        background: rgba(0, 0, 0, 0.85);
         flex-direction: column;
         text-align: center;
+        z-index: 999;
+        overflow-y: auto;
+        animation: slideDown 0.3s ease forwards;
+        backdrop-filter: blur(5px);
+        border-top: 1px solid rgba(28, 181, 224, 0.2);
     }
-    .nav-links.active { display: flex; }
-    .nav-links li { padding: 15px 0; }
+
+    @keyframes slideDown {
+        from {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    .nav-links.active { 
+        display: flex;
+    }
+
+    .nav-links li { 
+        padding: 18px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 10px 20px;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+    }
+
+    .nav-links a:hover {
+        color: #1CB5E0;
+        text-shadow: 0 0 8px rgba(28, 181, 224, 0.4);
+    }
+
+    .active-link {
+        color: #1CB5E0 !important;
+    }
 }
 
 /* About Page Layout */
