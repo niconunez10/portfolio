@@ -933,6 +933,27 @@ body {
     transition: 0.3s ease;
 }
 
+/* Link inside modal to view the certificate on the issuing site */
+.modal-link {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1CB5E0;
+    color: #00121a;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    display: none; /* Shown dynamically when available */
+    z-index: 1002;
+}
+
+.modal-link:hover {
+    filter: brightness(0.95);
+}
+
 .close-modal:hover,
 .close-modal:focus {
     color: #1CB5E0;

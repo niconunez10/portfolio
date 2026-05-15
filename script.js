@@ -21,6 +21,7 @@ if (mobileMenu && navLinks) {
 // Image Expansion Modal
 const imageModal = document.getElementById('imageModal');
 const modalImage = document.getElementById('modalImage');
+const modalLink = document.getElementById('modalLink');
 const closeModal = document.querySelector('.close-modal');
 const expandableImages = document.querySelectorAll('.expandable-image');
 
@@ -30,6 +31,13 @@ if (expandableImages.length > 0) {
             e.preventDefault();
             e.stopPropagation();
             modalImage.src = image.src;
+            // Find corresponding certificate link inside the same card (if present)
+            const card = image.closest('.cert-card');
+            const titleLink = card ? card.querySelector('.cert-info a') : null;
+            if (modalLink && titleLink) {
+                modalLink.href = titleLink.href;
+                modalLink.style.display = 'inline-block';
+            }
             imageModal.style.display = 'block';
             document.body.style.overflow = 'hidden';
         });
