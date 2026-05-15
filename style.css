@@ -438,11 +438,23 @@ body {
 
 .tech-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(250px, 1fr));
+    grid-template-columns: repeat(4, minmax(200px, 1fr));
     gap: 30px;
     margin-top: 50px;
     align-items: stretch;
     grid-auto-rows: minmax(220px, auto);
+}
+
+@media (max-width: 1024px) {
+    .tech-grid {
+        grid-template-columns: repeat(3, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .tech-grid {
+        grid-template-columns: repeat(2, minmax(250px, 1fr));
+    }
 }
 
 .tech-card {
@@ -472,6 +484,14 @@ body {
     color: #1CB5E0;
     margin-bottom: 20px;
     display: block;
+}
+
+.tech-card img.tech-logo {
+    width: 3.5rem;
+    height: 3.5rem;
+    margin-bottom: 20px;
+    display: block;
+    object-fit: contain;
 }
 
 /* Special styling for C icon since FontAwesome doesn't have a standard C logo */
